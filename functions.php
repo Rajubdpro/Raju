@@ -2,6 +2,86 @@
 /**
  * My Theme function
  */
+
+//Sideber register function
+
+function raju_widgets_register(){
+  register_sidebar(array(
+    'name' => __('Main Widget Area', 'raju'),
+    'id'   => 'sideber-1',
+    'description' => __('Apperas in the sidebar in blog page and also other page', 'raju'),
+    'before_widget' => '<div class="child_sidebar">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2 class="title">',
+    'after_title' => '</h2>',
+    ));
+  register_sidebar(array(
+    'name' => __('Footer 1', 'raju'),
+    'id'   => 'footer-1',
+    'description' => __('Apperas in the sidebar in blog page and also other page', 'raju'),
+    'before_widget' => '<div class="child_sidebar">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2 class="title">',
+    'after_title' => '</h2>',
+    ));
+  register_sidebar(array(
+    'name' => __('Footer 2', 'raju'),
+    'id'   => 'footer-2',
+    'description' => __('Apperas in the sidebar in blog page and also other page', 'raju'),
+    'before_widget' => '<div class="child_sidebar">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2 class="title">',
+    'after_title' => '</h2>',
+    ));
+  register_sidebar(array(
+    'name' => __('Footer 3', 'raju'),
+    'id'   => 'footer-3',
+    'description' => __('Apperas in the sidebar in blog page and also other page', 'raju'),
+    'before_widget' => '<div class="child_sidebar">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2 class="title">',
+    'after_title' => '</h2>',
+    ));
+}
+
+add_action('widgets_init', 'raju_widgets_register');
+
+
+
+
+
+// Except to 40 Word
+function raju_excerpt_more($more){
+  return '<br> <br> <a class="redmore" href="'.get_permalink() . '">' . 'Read More' . '</a>';
+}
+add_filter('excerpt_more', 'raju_excerpt_more');
+
+function raju_excerpt_lenght($length){
+  return 40;
+}
+add_filter('excerpt_length', 'raju_excerpt_lenght', 999);
+
+//Pagenve function
+
+// Pagenav Function
+function raju_pagenav(){
+  global $wp_query, $wp_rewrite;
+  $pages ='';
+  $max = $wp_query->max_num_pages;
+  if(!$current = get_query_var('paged')) $current = 1;
+  $args['base'] = str_replace(999999999, '%#%', get_pagenum_link(999999999));
+  $args['total'] = $max;
+  $args['current'] = $current;
+  $total = 1;
+  $args['prev_text'] = 'Prev';
+  $args['next_text'] = 'Next';
+  if ($max > 1) echo '</pre>
+    <div class="wp_pagenav">';
+      if ($total == 1 && $max > 1) $pages = '<p class="pages"> Page ' .$current . '<span>of</span>' . $max . '</p>';
+      echo $pages . paginate_links($args);
+      if ($max > 1 ) echo '</div><pre>';
+}
+
     // Menu Register
     register_nav_menu( 'main_menu', __('Main Menu', 'raju'));
     class raju_theme{
@@ -9,10 +89,13 @@
     function __construct(){
          //Add Theme title
         add_theme_support('title-tag');
+        //Add theme themnal
+        add_image_size('post-thumbnails', 970, 350, true);
+        add_theme_support( 'post-thumbnails', array('page', 'post') );
         //Add css and js file calling
         add_action('wp_enqueue_scripts', [$this, 'raju_css_js_file_calling']);
         //Add  google fonts
-        add_action('wp_enqueue_scripts', [$this, 'ali_add_google_fonts']);
+        add_action('wp_enqueue_scripts', [$this, 'raju_add_google_fonts']);
         // Add customize regster
         add_action('customize_register', [$this, 'raju_customizar_ragister']);
 
@@ -34,10 +117,9 @@ function raju_css_js_file_calling(){
 }
 
 // Google Fonts Enqueue
-function ali_add_google_fonts(){
-    wp_enqueue_style('ali_google_fonts', 'https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Oswald&display=swap', false);
-  }
-
+function raju_add_google_fonts(){
+  wp_enqueue_style('raju_google_fonts', 'https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@400;700&display=swap', false);
+}
 
   //Theme Function
 function raju_customizar_ragister($wp_customize){

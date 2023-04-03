@@ -1,41 +1,37 @@
-/*=======================================
- Common CSS
-========================================*/
+/*======================================= Common CSS ========================================*/
 body {
-  font-family: "Kaisei Decol", serif;
+  font-family: "Roboto", sans-serif;
   font-size: 15px;
   line-height: 1.5em;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Oswald", sans-serif;
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
   line-height: 1.5em;
 }
-
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5em;
+}
+.redmore {
+  background: #ea1a70;
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 25px;
+  transition: 0.5s;
+}
+.redmore:hover {
+  background: #262626;
+  color: #fff;
+}
 img {
   max-width: 100%;
 }
-
-/*=======================================
-  Header Area Style
- ========================================*/
+/*======================================= Header Area Style ========================================*/
 #header_area {
   padding: 15px 0;
-}
-#header_area #notice {
-  background: #ff6b6b;
-  padding: 10px 0;
-  color: #fff;
-  text-align: center;
-  margin-bottom: 10px;
-}
-#header_area #notice h2 {
-  margin: 0;
 }
 #header_area .logo img {
   width: 120px;
@@ -51,7 +47,7 @@ img {
 #header_area .col-md-9 ul li {
   display: inline-block;
   position: relative;
-  /*Dropdown Menu*/
+ /*Dropdown Menu*/
 }
 #header_area .col-md-9 ul li a {
   color: #262626;
@@ -134,10 +130,7 @@ img {
 #header_area.center_menu .col-md-9 ul {
   text-align: center;
 }
-
-/*===========================================
-  Menu Position
-===========================================*/
+/*=========================================== Menu Position ===========================================*/
 #header_area.left_menu .col-md-3 {
   order: 2;
 }
@@ -147,7 +140,6 @@ img {
 #header_area.left_menu .col-md-9 ul {
   text-align: left;
 }
-
 #header_area.center_menu .col-md-3 {
   width: 100%;
   text-align: center;
@@ -162,10 +154,151 @@ img {
 #header_area.center_menu .col-md-9 ul ul {
   text-align: left;
 }
+/*======================================= Index Page Style ========================================*/
+#body_area {
+  padding: 45px 0;
+}
+
+#body_area .blog_area {
+  width: 100%;
+  margin-bottom: 20px;
+  background: #e2e3e240;
+  padding: 15px 20px;
+  box-shadow: 0px 0px 10px #ddd;
+}
+#body_area .post_thumb {
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 15px;
+}
+#body_area .post_thumb img {
+  transition: 0.5s;
+  width: 100%;
+  display: block;
+}
+#body_area .post_thumb:hover img {
+  transform: scale(1.1);
+}
+#body_area .post_details {
+  width: 100%;
+}
+#body_area .post_details h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+}
+#body_area .post_details h2 a {
+  color: #262626;
+  text-decoration: none;
+  transition: 0.5s;
+}
+#body_area .post_details h2 a:hover {
+  color: #ea1a70;
+}
 
 /*===========================================
-  Copyright Area Styling
+  Sibebar Area Styling
 ===========================================*/
+.child_sidebar {
+  margin-bottom: 20px;
+}
+.child_sidebar h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 0;
+  line-height: 1em;
+  border-left: 5px solid #ea1a70;
+  padding-left: 10px;
+}
+.child_sidebar input[type="search"] {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+.child_sidebar button[type="submit"] {
+  background: #ea1a70;
+  border: 1px solid #ea1a70;
+  padding: 10px;
+  margin: 0;
+  color: #fff;
+  transition: 0.5s;
+}
+.child_sidebar button[type="submit"]:hover {
+  background: #262626;
+  border: 1px solid #262626;
+}
+.child_sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+.child_sidebar ul li {
+  display: block;
+  margin-bottom: 5px;
+}
+.child_sidebar ul ul {
+  display: none;
+}
+.child_sidebar ul li a {
+  display: inline-block;
+  color: #262626;
+  text-decoration: none;
+}
+.child_sidebar ul li a:hover {
+  color: #ea1a70;
+}
+.child_sidebar a.tag-cloud-link {
+  color: #fff;
+  background: #262626;
+  display: inline-block;
+  font-size: 12px !important;
+  text-decoration: none;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.child_sidebar a.tag-cloud-link:hover {
+  background: #ea1a70;
+}
+
+/*=========================================== Pagenav Area Styling ===========================================*/
+#page_nav p.pages {
+  background: #ea1a70;
+  color: #fff;
+  padding: 5px 10px;
+}
+#page_nav p.pages span {
+  display: inline-block;
+  padding: 0 5px;
+}
+#page_nav .page-numbers {
+  background: #ea1a70;
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  transition: 0.5s;
+}
+#page_nav .page-numbers.current, #page_nav .page-numbers:hover {
+  background: #262626;
+}
+
+/*===========================================
+  Footer Area Styling
+===========================================*/
+#footer {
+  background: #292929;
+  padding: 40px 0 20px;
+  color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+#footer .child_sidebar ul li a {
+  color: #fff;
+}
+
+/*=========================================== Copyright Area Styling ===========================================*/
 #copyright_area {
   background: #292929;
   padding: 20px 0;
@@ -182,4 +315,4 @@ img {
 }
 #copyright_area p a:hover {
   text-decoration: underline;
-}/*# sourceMappingURL=custom.css.map */
+}
