@@ -13,7 +13,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto", sans-serif;
   line-height: 1.5em;
 }
-.redmore {
+.redmore,
+input[type="submit"].submit {
+  border: none;
   background: #ea1a70;
   color: #fff;
   font-size: 15px;
@@ -22,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px 25px;
   transition: 0.5s;
 }
-.redmore:hover {
+.redmore:hover, input[type="submit"].submit:hover {
   background: #262626;
   color: #fff;
 }
@@ -156,7 +158,7 @@ img {
 }
 /*======================================= Index Page Style ========================================*/
 #body_area {
-  padding: 45px 0;
+  padding-top:0px;
 }
 
 #body_area .blog_area {
@@ -182,6 +184,9 @@ img {
 #body_area .post_details {
   width: 100%;
 }
+#body_area .post_details div{
+  width: 100% !important;
+}
 #body_area .post_details h2 {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
@@ -195,7 +200,19 @@ img {
 #body_area .post_details h2 a:hover {
   color: #ea1a70;
 }
-
+/*===========================================
+  Archive Styling
+===========================================*/
+#archive_title, #serch_title {
+  background: #ea1a70;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+#archive_title, #serch_title  h1 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 0;
+}
 /*===========================================
   Sibebar Area Styling
 ===========================================*/
@@ -284,6 +301,12 @@ img {
 #page_nav .page-numbers.current, #page_nav .page-numbers:hover {
   background: #262626;
 }
+
+/*=========================Comment section style==============================*/
+textarea#comment {
+  width: 100%;
+}
+
 
 /*===========================================
   Footer Area Styling
