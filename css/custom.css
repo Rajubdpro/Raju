@@ -33,6 +33,7 @@ input[type="submit"].submit {
 }
 img {
   max-width: 100%;
+  height: auto;
 }
 /*======================================= Header Area Style ========================================*/
 #header_area {
@@ -364,6 +365,25 @@ textarea#comment {
 }
 
 
+/*============Theme Service area styling================*/
+#service_area {
+  text-align: center;
+  padding-bottom: 40px;
+}
+#service_area .child_service {
+  background: #ddd;
+  box-shadow: 0 0 10px #ddd;
+  padding: 15px;
+  border-radius: 15px;
+}
+#service_area .child_service img {
+  width: 100%;
+  margin: 0 0 15px;
+}
+.child_sidebar .col-md-4 {
+  width: 100%;
+  margin-bottom: 20px;
+}
 /*===========================================
   Footer Area Styling
 ===========================================*/
