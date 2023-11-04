@@ -1,6 +1,6 @@
 <?php
 /**
- * The template displaing the archive pages
+ * The template displaing the archive page
  */
 get_header();
 ?>
